@@ -92,15 +92,6 @@ Once you've booted up the VM, on the lefthand panel, right-click on the black sq
 
 and press `ENTER`. Firefox should open up in a few seconds, and you should see a list of the Jupyter notebooks. Click one and you should be good to go!
 
-### 4: Use mybinder
-
-The wonderful folks at [HHMI Janelia Farms](https://www.janelia.org/) have created a free service that can "containerize" any open GitHub repository. All you have to do is follow these two steps:
-
- 1. Go to the main file listing in this GitHub repo, and click the `notebooks` folder.
- 2. Scroll down to the text that says "Machine Learning Workshop Materials". Click the little "binder" button above it.
-
-Give it a few minutes--these are free servers, after all--and you should see a listing of all the notebooks. Click one, and you're good to go!
-
 # Acknowledgements
 
 This material is based almost entirely on the content made available by Jake VanderPlas in his excellent [scikit-learn tutorial](https://github.com/jakevdp/sklearn_tutorial).
