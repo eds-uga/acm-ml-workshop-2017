@@ -74,7 +74,23 @@ If it worked, you should see a listing of the `ipynb` files. Click on one, and y
 
 First (and hopefully obviously), you'll need to [download and install VirtualBox](https://www.virtualbox.org/wiki/Downloads). Like Docker, it runs on pretty much any operating system.
 
-Once the VirtualBox interface is up and running, all you have to do is download the virtual machine image (VMI).
+Once the VirtualBox interface is up and running, all you have to do is download the virtual machine image (VDI) and plug it into VirtualBox.
+
+The image is located here (**you need to be connected to the UGA network to access**): [http://ridcully.cs.uga.edu/uga-acm-ml-workshop-2017.vdi](http://ridcully.cs.uga.edu/uga-acm-ml-workshop-2017.vdi)
+
+When you've downloaded the VM image, go to the main VirtualBox window and click the "New" icon in the upper left corner. This starts the process of creating a new VM. Give it whatever name you want; select "Linux" from the "Type" drop-down; select "Ubuntu (64-bit)" from the "Version" drop-down. Click "Next".
+
+Set whatever memory size you'd like (4GB should work just fine). Click "Next".
+
+**Here's the important step.** Choose "Use an existing virtual hard disk file", and click the icon on the far right to navigate to the VDI file you just downloaded. Select it, and hit the "Create" button. You should be done!
+
+At this point, a new icon should appear on the main screen, with whatever name you gave it in the first step. Click this item, and select "Start" to boot it up.
+
+Once you've booted up the VM, on the lefthand panel, right-click on the black square window-looking icon, and select "New Terminal". A black window with green text should pop up. Type:
+
+    ./QUICKSTART.sh
+
+and press `ENTER`. Firefox should open up in a few seconds, and you should see a list of the Jupyter notebooks. Click one and you should be good to go!
 
 ### 4: Use mybinder
 
