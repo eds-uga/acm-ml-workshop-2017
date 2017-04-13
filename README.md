@@ -5,15 +5,22 @@
 - email: <squinn@cs.uga.edu>
 - twitter: [@SpectralFilter](https://twitter.com/SpectralFilter)
 - github
-  - [EDS@UGA](https://github.com/eds-uga)
-  - [Quinn Group](https://github.com/quinngroup)
-  - [my github](https://github.com/magsol)
+  - [teaching](https://github.com/eds-uga)
+  - [research](https://github.com/quinngroup)
 
 This repository contains notebooks and other files associated with the UGA ACM Machine Learning Workshop (based almost entirely on Jake VanderPlas' [scikit-learn tutorial](https://github.com/jakevdp/sklearn_tutorial); see "Acknowledgements" section at the end of this file).
 
+## Viewing the materials
+
+If you just want to view the static files, look no further--GitHub renders then natively in the web browser! Simply click on the `.ipynb` file you want to view, and it will appear.
+
+Alternatively, you can [view the tutorial materials](http://nbviewer.ipython.org/github/eds-uga/acm-ml-workshop-2017/blob/master/notebooks/Index.ipynb) using the excellent `nbviewer` service.
+
+Note, however, that you **cannot modify or run the contents within `nbviewer`**. To run or modify, then you'll have to read on to the next section.
+
 ## Installation and Setup
 
-This tutorial requires the following packages:
+Executing the code in the Jupyter notebooks requires the following packages to be installed:
 
 - Python version 3.5+
 - `numpy` version 1.12 or later: http://www.numpy.org/
@@ -23,38 +30,60 @@ This tutorial requires the following packages:
 - `jupyter` version 2.0 or later, with notebook support: http://ipython.org
 - `seaborn` version 0.7 or later
 
-The easiest way to get these is to use the [conda](https://store.continuum.io/) environment manager. I suggest downloading and installing [miniconda](http://conda.pydata.org/miniconda.html).
+There are several ways of getting up and running (see the [01-Introduction](https://github.com/eds-uga/acm-ml-workshop-2017/blob/master/notebooks/01-Introduction.ipynb) slides). In order from most technical to least:
 
-Once this is installed, the following command will install all required packages in your Python environment:
-```
-$ conda install numpy scipy matplotlib scikit-learn jupyter seaborn
-```
+### 1: Clone the repository and run locally
 
-Alternatively, you can download and install the (very large) Anaconda software distribution, found at https://store.continuum.io/.
-
-## Downloading the Tutorial Materials
-
-I would highly recommend using git, not only for this tutorial, but for the
-general betterment of your life.  Once git is installed, you can clone the
-material in this tutorial by using the git address shown above:
+You can either clone the repository (you'll need `git` installed) with the command:
 
     git clone git://github.com/eds-uga/acm-ml-workshop-2017.git
 
-If you can't or don't want to install git, there is a link above to download
-the contents of this repository as a zip file.
+or you can click the green "Clone or download" button on the right side of the main repository window to download a ZIP of the files you'll need.
 
-## Notebook Listing
+Next, you'll need to make sure you have the proper prerequisites installed. The easiest way to do this is with [conda](https://store.continuum.io/). Download and install [miniconda](http://conda.pydata.org/miniconda.html), then install the needed packages for your envrionment:
 
-You can [view the tutorial materials](http://nbviewer.ipython.org/github/eds-uga/acm-ml-workshop-2017/blob/master/notebooks/Index.ipynb) using the excellent nbviewer service.
+    conda install numpy scipy matplotlib scikit-learn jupyter seaborn
 
-Note, however, that you cannot modify or run the contents within nbviewer.
-To modify them, first download the tutorial repository, change to the notebooks directory, and run ``ipython notebook``.
-You should see the list in the ipython notebook launch page in your web browser.
-For more information on the IPython notebook, see http://ipython.org/notebook.html
+Finally, `cd` into the `notebooks` subdirectory of the files you checked out from GitHub, and run
 
-Note also that some of the code in these notebooks will not work outside the
-directory structure of this tutorial, so it is important to clone the full
-repository if possible.
+    jupyter notebook
+
+A browser window should pop up, and you should see a list of the `ipynb` files. Just click on one and go!
+
+### 2: Spin up a Docker container
+
+I've created a Docker container that automatically builds and stores everything you'll need; all you have to do is download the pre-built container from the Docker Hub, issue a single command, and you should be up and running.
+
+First, you'll need to download the [version of Docker appropriate for your platform](https://www.docker.com/community-edition#/download).
+
+Once you've installed Docker, fire up a command prompt. Run the following command to pull down the pre-built image:
+
+    docker pull magsol/uga-acm-ml-workshop-2017
+
+This might take some time; the image is nearly 2.5GB!
+
+Once the pull is finished, use the following command to run it:
+
+    docker run -it --rm -p 8888:8888 magsol/uga-acm-ml-workshop-2017
+
+You should see some green text spill out, and then the prompt will hang, seemingly waiting. This should signal that the Jupyter server is up and running. To test this, open up a web browser, and direct it to `http://localhost:8888`.
+
+If it worked, you should see a listing of the `ipynb` files. Click on one, and you should be good to go!
+
+### 3: Download a pre-built VirtualBox VM
+
+First (and hopefully obviously), you'll need to [download and install VirtualBox](https://www.virtualbox.org/wiki/Downloads). Like Docker, it runs on pretty much any operating system.
+
+Once the VirtualBox interface is up and running, all you have to do is download the virtual machine image (VMI).
+
+### 4: Use mybinder
+
+The wonderful folks at [HHMI Janelia Farms](https://www.janelia.org/) have created a free service that can "containerize" any open GitHub repository. All you have to do is follow these two steps:
+
+ 1. Go to the main file listing in this GitHub repo, and click the `notebooks` folder.
+ 2. Scroll down to the text that says "Machine Learning Workshop Materials". Click the little "binder" button above it.
+
+Give it a few minutes--these are free servers, after all--and you should see a listing of all the notebooks. Click one, and you're good to go!
 
 # Acknowledgements
 
