@@ -76,7 +76,7 @@ First (and hopefully obviously), you'll need to [download and install VirtualBox
 
 Once the VirtualBox interface is up and running, all you have to do is download the virtual machine image (VDI) and plug it into VirtualBox.
 
-The image is located here (**you need to be connected to the UGA network to access**): [http://ridcully.cs.uga.edu/uga-acm-ml-workshop-2017.vdi](http://ridcully.cs.uga.edu/uga-acm-ml-workshop-2017.vdi)
+The image is located here (**you need to be connected to the UGA network to access**): [http://ridcully.cs.uga.edu/uga-acm-ml-workshop-2017.vdi](http://ridcully.cs.uga.edu/uga-acm-ml-workshop-2017.vdi). Be patient with this one; it's almost 8GB!
 
 When you've downloaded the VM image, go to the main VirtualBox window and click the "New" icon in the upper left corner. This starts the process of creating a new VM. Give it whatever name you want; select "Linux" from the "Type" drop-down; select "Ubuntu (64-bit)" from the "Version" drop-down. Click "Next".
 
